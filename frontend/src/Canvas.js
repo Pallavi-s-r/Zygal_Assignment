@@ -8,24 +8,24 @@ const CanvasPixelData = () => {
     const context = canvas.getContext('2d');
     const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
 
- 
+
 
     context.font = "16px Arial";
-            context.fillStyle = "red";
-            context.textAlign = "center";
-            context.textBaseline = "middle";
+    context.fillStyle = "red";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
 
-          
-            var canvasWidth = canvas.width;
-            var canvasHeight = canvas.height;
-            var centerX = canvasWidth / 2;
-            var centerY = canvasHeight / 2;
 
-       
-            var character = "PS";
-            context.fillText(character, centerX, centerY);
+    var canvasWidth = canvas.width;
+    var canvasHeight = canvas.height;
+    var centerX = canvasWidth / 2;
+    var centerY = canvasHeight / 2;
 
-    
+
+    var character = "PS";
+    context.fillText(character, centerX, centerY);
+
+
     let pixelData = '';
     for (let i = 0; i < imageData.length; i += 4) {
       const red = imageData[i];
@@ -54,7 +54,7 @@ const CanvasPixelData = () => {
     <div>
       <canvas ref={canvasRef} width="16" height="34"></canvas>
       <br />
-       <a onClick={handleDownload} style={{ cursor: 'pointer',textDecoration: 'underline'  }}>
+      <a onClick={handleDownload} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
         Download Pixel Data
       </a>
     </div>
